@@ -1,0 +1,35 @@
+<div class="row">
+  
+  <div class="col-md-4">
+    <img src="{{person.img}}">
+  </div>
+  <div class="col-md-5">
+    <span ng-repeat="i in [1,2,3,4,5]">
+      <span class="glyphicon glyphicon-heart" aria-hidden="true" ng-if="i <= person.rating "></span>
+      <span class="glyphicon glyphicon-heart-empty" aria-hidden="true" ng-if="i > person.rating "></span>
+    </span>
+  </div> 
+   <div class="col-md-3">
+    <button class="btn btn-lg btn-primary" ng-click="message('Messaging feature currently disabled due to zombie apocalypse.')">SEND MESSAGE</button>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+      <h1>{{person.name}}</h1>
+      <blockquote>{{person.Description}}</blockquote>
+    </div>
+
+
+<table class="table table-striped">
+  <tr>
+    <th>Likes</th>
+    <th>Dislikes</th>
+  </tr>
+  
+  <tr ng-repeat="like in person.Likes">
+    <td>{{like}}</td>
+    <td>{{person.Dislikes[$index]}}</td>
+  </tr>
+</table>
+</div>
